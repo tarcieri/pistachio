@@ -1,12 +1,8 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 $LOAD_PATH.unshift File.dirname(__FILE__)
 
-require 'bundler/setup'
 require 'rspec'
 require 'pistachio'
-
-# Setup bundler
-Bundler.setup :default
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.

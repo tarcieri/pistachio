@@ -1,4 +1,5 @@
 require 'rack'
+require 'stash'
 
 class Pistachio
   def initialize(options = {})
