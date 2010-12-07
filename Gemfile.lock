@@ -1,26 +1,19 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    diff-lcs (1.1.2)
     git (1.2.5)
     jeweler (1.5.1)
       bundler (~> 1.0.0)
       git (>= 1.2.5)
       rake
     rack (1.2.1)
+    rack-test (0.5.6)
+      rack (>= 1.0)
     rake (0.8.7)
     redis (2.1.1)
     redis-namespace (0.10.0)
       redis (< 3.0.0)
-    rspec (2.2.0)
-      rspec-core (~> 2.2)
-      rspec-expectations (~> 2.2)
-      rspec-mocks (~> 2.2)
-    rspec-core (2.2.1)
-    rspec-expectations (2.2.0)
-      diff-lcs (~> 1.1.2)
-    rspec-mocks (2.2.0)
-    stash (0.1.1)
+    stash (1.0.0)
       redis (~> 2.1.0)
       redis-namespace (~> 0.10.0)
 
@@ -31,5 +24,5 @@ DEPENDENCIES
   bundler (~> 1.0.0)
   jeweler (~> 1.5.1)
   rack (~> 1.2.0)
-  rspec (>= 2.1.0)
-  stash (>= 0.1.1)
+  rack-test (~> 0.5.0)
+  stash (~> 1.0.0)
