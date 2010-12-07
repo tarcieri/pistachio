@@ -8,13 +8,11 @@ with those solutions and just want something simple?
 
 Pistachio provides a simple HTTP long polling middleware for Rack, which is
 backed by the Stash gem. Stash provides an abstract interface to data
-structures servers, namely Redis.
-
-Servers like Redis provide a list data type, which can easily be used as a
-message queue. Redis also supports a "blocking pop" from a list, where clients
-will either receive the next message in the list immediately, or if the list
-is empty Redis will block until the next message is available (or a timeout 
-occurs).
+structures servers, namely Redis.  Servers like Redis provide a list data
+type, which can easily be used as a message queue. Redis also supports a
+"blocking  pop" from a list, where clients will either receive the next 
+message in the list immediately, or if the list is empty Redis will block 
+until the next message is available (or a timeout occurs).
 
 Pistachio combines this all into a single, easy-to-use Rack middleware for
 delivering realtime push notification events to HTTP clients like web browsers.
