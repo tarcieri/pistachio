@@ -29,18 +29,17 @@ Jeweler::Tasks.new do |gem|
 end
 Jeweler::RubygemsDotOrgTasks.new
 
-require 'rspec/core'
-require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new(:spec) do |spec|
-  spec.pattern = FileList['spec/**/*_spec.rb']
+require 'rake/testtask'
+
+namespace :test do
+  Rake::TestTask.new(:rack) do |test|
+    test.libs << 'lib' << 'test'
+    test.pattern = 'test/rack/**/test_*.rb'
+    test.verbose = true
+  end
 end
 
-RSpec::Core::RakeTask.new(:rcov) do |spec|
-  spec.pattern = 'spec/**/*_spec.rb'
-  spec.rcov = true
-end
-
-task :default => :spec
+task :default => 'test:rack'
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
