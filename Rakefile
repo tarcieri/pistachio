@@ -25,7 +25,7 @@ Jeweler::Tasks.new do |gem|
   gem.add_runtime_dependency "stash", ">= 1.0.0"
   gem.add_runtime_dependency "rack",  "~> 1.2.0"
   
-  gem.add_development_dependency 'rspec', '>= 2.1.0'
+  gem.add_development_dependency 'rack-test', '>= 0.5.0'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
