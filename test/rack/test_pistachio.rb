@@ -4,7 +4,8 @@ class TestPistachio < Test::Unit::TestCase
   include Rack::Test::Methods
   
   def app
-    Pistachio.new :adapter => :redis, :namespace => 'test_pistachio'
+    Pistachio.new :default, :adapter => :redis, 
+                            :namespace => 'test_pistachio'
   end
   
   def test_sending_messages
