@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "pistachio"
   gem.homepage = "http://github.com/tarcieri/pistachio"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "HTTP push middleware for Rack powered by Stash"
+  gem.description = "Pistachio provides a simple HTTP long polling middleware for Rack which is backed by the Stash gem"
   gem.email = "tony@medioh.com"
   gem.authors = ["Tony Arcieri"]
   
