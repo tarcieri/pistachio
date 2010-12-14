@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pistachio}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tony Arcieri"]
   s.date = %q{2010-12-13}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{Pistachio provides a simple HTTP long polling middleware for Rack which is backed by the Stash gem}
   s.email = %q{tony@medioh.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "config.ru",
     "lib/pistachio.rb",
+    "pistachio.gemspec",
     "test/helper.rb",
     "test/rack/test_pistachio.rb"
   ]
@@ -33,7 +34,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{HTTP push middleware for Rack powered by Stash}
   s.test_files = [
     "test/helper.rb",
     "test/rack/test_pistachio.rb"
