@@ -10,6 +10,9 @@ end
 require 'test/unit'
 require 'rack/test'
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-$LOAD_PATH.unshift(File.dirname(__FILE__))
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift File.dirname(__FILE__)
 require 'pistachio'
+
+Pistachio.setup :default, :adapter => :redis, 
+                          :namespace => 'test_pistachio'

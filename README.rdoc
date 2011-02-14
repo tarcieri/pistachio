@@ -17,6 +17,42 @@ until the next message is available (or a timeout occurs).
 Pistachio combines this all into a single, easy-to-use Rack middleware for
 delivering realtime push notification events to HTTP clients like web browsers.
 
+== Using Pistachio in your Rack application
+
+Add the following to your config.ru file:
+
+  Pistachio.setup :default, :adapter   => :redis, 
+                            :namespace => 'myapp_name',
+                            :path      => '/message_path'
+                            
+  use Pistachio::Middleware
+  
+This will configure Pistachio to talk to Redis, store its messages in the
+'myapp_name' Redis namespace, and mount the Pistachio Rack middleware
+under the /message_path path.
+
+All messages must be sent to a given named endpoint. To send a message via
+Pistachio within your Rack application, do:
+
+  Pistachio[:foobar] << "my totally awesome message"
+
+Messages sent to the 'foobar' endpoint can be retrieved by making an HTTP GET
+request to /message_path/foobar. This will return one of two HTTP statuses:
+
+* 200: a message was retrieved successfully
+* 504: the request timed out before a message was received
+
+By default Pistachio uses a 30 second timeout. You can adjust this with the
+':timeout' parameter to Pistachio.setup.
+
+It's the responsibility of the client to hit the given message endpoint in a
+loop. If the client gets a 504 response it should retry. Any other HTTP
+responses should be considered errors, in which case it'd be good if the
+client utilized exponential backoff to avoid hammering Pistachio when errors
+are occurring.
+
+No reference clients are presently available. Pull requests happily accepted!
+
 == Copyright
 
 Copyright (c) 2010 Tony Arcieri. See file LICENSE for further details.

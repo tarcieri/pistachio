@@ -4,12 +4,11 @@ class TestPistachio < Test::Unit::TestCase
   include Rack::Test::Methods
   
   def app
-    Pistachio.new :default, :adapter => :redis, 
-                            :namespace => 'test_pistachio'
+    Pistachio::Middleware.new
   end
   
   def test_sending_messages
-    app[:lolendpoint] << 'ohai'
+    Pistachio[:lolendpoint] << 'ohai'
     
     get "/push_messages/lolendpoint"
     

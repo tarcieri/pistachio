@@ -1,5 +1,7 @@
 require 'bundler/setup'
-require File.expand_path('../lib/pistachio', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
+
+require 'pistachio'
 
 Bundler.setup :default
 run Pistachio.new
