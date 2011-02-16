@@ -1,6 +1,6 @@
 module Pistachio
   class Middleware
-    def initialize
+    def initialize(app)
       # Matches messages that should be processed by Pistachio
       @path_regex = /^#{Pistachio.path}\/(\w+)$/
       @timeout = Pistachio.timeout
